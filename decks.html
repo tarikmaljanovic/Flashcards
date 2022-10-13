@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Flash Cards-Decks</title>
+      <link href="decks.css" rel="Stylesheet">
+      <script defer src="flash.js"></script>
+      <script defer src="https://kit.fontawesome.com/22dd792492.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="nav-bar">
+          <a href="decks.html"><li id="decks-nav">Decks</li></a>
+          <a href="study.html"><li id="study-nav">Study Session</li></a>
+        </div>
+        <div class="decks-cont">
+          <button class="create-deck">Create Deck</button>
+        </div>
+        <div class="popup">
+          <div class="overlay"></div>
+          <div class="popup-form">
+            <div class="close-bttn">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="form-input">
+              <input type="text" id="question" placeholder="Enter your Question">
+              <input type="text" id="answer" placeholder="Enter your Answer">
+            </div>
+            <button id="enter-button">Enter</button>
+          </div>
+        </div>
+        <div class="popup">
+          <div class="overlay"></div>
+          <div class="popup-form">
+            <div class="close-bttn">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="form-input">
+              <input type="text" id="deck-title" placeholder="Name your Deck">
+            </div>
+            <button id="enter-button">Enter</button>
+          </div>
+        </div>
+        <div class="popup">
+          <div class="overlay"></div>
+          <div class="popup-form">
+            <div class="close-bttn">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="form-input">
+              <input type="text" id="edit-question" placeholder="Enter your Question">
+              <input type="text" id="edit-answer" placeholder="Enter your Answer">
+            </div>
+            <button id="enter-button">Enter</button>
+          </div>
+        </div>
+    </body>
+  </html>

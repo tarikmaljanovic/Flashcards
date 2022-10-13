@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Popup window that asks the user for input */
+.popup {
+  position: fixed;
+  pointer-events: none;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  left: 0%;
+  display: none;
+}
+
+.popup-active {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgb(90, 90, 90);
+  opacity: 0.7;
+}
+
+.popup-form {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  z-index: 100;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background-color: rgb(210, 238, 255);
+  border-radius: 7px;
+}
+
+.close-bttn {
+  display: flex;
+  justify-content: flex-end;
+  width: 470px;
+  font-size: 30px;
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.form-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.form-input input {
+  border: none;
+  margin: 5px;
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  box-shadow: 0.5px 0.5px 3px 0.2px;
+}
+
+#enter-button {
+  border: none;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(182, 234, 250);
+  box-shadow: 0.5px 0.5px 3px 0.2px;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#enter-button:hover {
+  transition: 0.1s ease-in-out;
+  background-color: rgb(106, 193, 219);
+}
+
+#enter-button:active {
+  transition: 0.1s ease-in-out;
+  background-color: rgb(106, 193, 219);
+  box-shadow: 0.3px 0.3px 2px 0px;
+}
+
+/*The body of the page*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(210, 238, 255);
+  height: 75px;
+  border-radius: 5px;
+  box-shadow: 1px 0px 5px 1px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+}
+
+.nav-bar a:visited {
+  color: black;
+}
+
+#decks-nav, #study-nav {
+  list-style-type: none;
+  cursor: pointer;
+
+  background-color: rgb(182, 234, 250);
+  box-shadow: 0.5px 0.5px 3px 0.2px black;
+  border-radius: 5px;
+  width: 170px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#decks-nav {
+  background-color: rgb(106, 193, 219);
+}
+
+#decks-nav:hover, #study-nav:hover, .create-deck:hover {
+  transition: 0.1s ease-in-out;
+  background-color: rgb(106, 193, 219);
+}
+
+#decks-nav:active, #study-nav:active, .create-deck:active {
+  transition: 0.1s ease-in-out;
+  background-color: rgb(106, 193, 219);
+  box-shadow: 0.3px 0.3px 2px 0px;
+  color: black;
+}
+
+.create-deck {
+  cursor: pointer;
+
+  background-color: rgb(182, 234, 250);
+  box-shadow: 0.5px 0.5px 3px 0.2px;
+  border-radius: 5px;
+  border: none;
+  width: 170px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+/* Container containing the decks and the deck cointainers containing the cards */
+
+.decks-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+
+  margin-top: 15px;
+  padding: 10px;
+
+  background-color: rgb(210, 238, 255);
+  border-radius: 5px;
+  box-shadow: 1px 0px 5px 1px;
+
+  width: 100%;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.header>i {
+  font-size: 30px;
+  margin: 5px;
+  color: rgb(139, 139, 139);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.header>i:hover {
+  color: rgb(90, 90, 90);
+}
+
+.deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+  
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgb(236, 227, 227);
+  box-shadow: 1px 0px 5px 0.2px rgb(119, 119, 119);
+  border-radius: 5px;
+
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+.card > p {
+  font-size: 20px;
+  color: rgb(139, 139, 139);
+  word-break: break-all;
+  overflow: auto;
+  padding: 10px;
+}
+
+.card-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 70px;
+  color:rgb(255, 255, 255);
+  background-color: rgb(236, 227, 227);
+  box-shadow: 1px 0px 5px 0.2px rgb(119, 119, 119);
+  border-radius: 5px;
+
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card-add:hover {
+  opacity: 0.7;
+}
+
+.deck-title {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  color: white;
+  text-shadow: 2px 2px 6px black;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ui-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.ui-cont i {
+  margin: 10px;
+  font-size: 30px;
+  color: rgb(139, 139, 139);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.ui-cont i:hover {
+  color: rgb(90, 90, 90);
+}
