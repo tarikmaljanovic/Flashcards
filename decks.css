@@ -245,6 +245,7 @@ body {
   word-break: break-all;
   overflow: auto;
   padding: 10px;
+  text-align: center;
 }
 
 .card-add {

@@ -101,12 +101,111 @@ body {
   font-size: 15px;
 }
 
+.shuffle {
+  cursor: pointer;
+
+  background-color: rgb(248, 253, 255);
+  box-shadow: 0.5px 0.5px 3px 0.2px;
+  border-radius: 5px;
+  border: none;
+  width: 170px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+.shuffle:hover {
+  transition: 0.1s ease-in-out;
+  background-color: rgb(236, 251, 255);
+}
+
+.shuffle:active {
+  transition: 0.1s ease-in-out;
+  background-color: rgb(236, 251, 255);
+  box-shadow: 0.3px 0.3px 2px 0px;
+  color: black;
+}
+
 .current-deck {
-  width: 800px;
-  height: 500px;
+  width: 500px;
+  height: 300px;
   background-color: rgb(106, 193, 219);
   box-shadow: 0.3px 0.3px 2px 0px;
   border-radius: 8px;
 
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.card > p {
+  font-size: 20px;
+  color: rgb(139, 139, 139);
+  word-break: break-all;
+  overflow: auto;
+  padding: 10px;
+}
+
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 227, 227);
+  box-shadow: 1px 0px 5px 0.2px rgb(119, 119, 119);
+  border-radius: 5px;
+  background-color: rgb(236, 227, 227);
+  font-size: 20px;
+  color: rgb(139, 139, 139);
+  word-break: break-all;
+  overflow: auto;
+  padding: 10px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 227, 227);
+  box-shadow: 1px 0px 5px 0.2px rgb(119, 119, 119);
+  border-radius: 5px;
+  background-color: rgb(236, 227, 227);
+  font-size: 20px;
+  color: rgb(139, 139, 139);
+  word-break: break-all;
+  overflow: auto;
+  padding: 10px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.card:active {
+  transform: rotateY(180deg);
 }
