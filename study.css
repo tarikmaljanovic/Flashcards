@@ -209,3 +209,15 @@ body {
 .card:active {
   transform: rotateY(180deg);
 }
+
+.current-deck i {
+  font-size: 30px;
+  padding: 10px;
+  color: rgb(236, 227, 227);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.current-deck i:hover {
+  color: rgb(139, 139, 139);
+}
